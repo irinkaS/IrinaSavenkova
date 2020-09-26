@@ -1,6 +1,7 @@
 package hw1;
 
-import calculator.Calculator;
+import com.epam.tat.module4.Calculator;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
@@ -8,10 +9,22 @@ import static org.testng.Assert.assertEquals;
 
 public class CalculatorTestMultiplication {
 
-    @Test(dataProviderClass = CalculatorDataProvider.class, dataProvider = "multiplication")
+    Calculator calculator;
+
+    @BeforeMethod
+    public void initializeCalculator() {
+        calculator = new Calculator();
+    }
+
+    @Test(dataProviderClass = CalculatorDataProvider.class, dataProvider = "multiplicationDouble")
     public void multiplicationTestMethod(double a, double b, double expected) {
-        Calculator calculator = new Calculator();
-        double actual = calculator.multiplication(a, b);
+        double actual = calculator.mult(a, b);
         assertEquals(actual, expected, 0.1);
+    }
+
+    @Test(dataProviderClass = CalculatorDataProvider.class, dataProvider = "multiplicationLong")
+    public void multiplicationTestMethod(long a, long b, long expected) {
+        long actual = calculator.mult(a, b);
+        assertEquals(actual, expected);
     }
 }
