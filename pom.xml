@@ -16,6 +16,10 @@
         <maven-surefire-plugin-version>3.0.0-M5</maven-surefire-plugin-version>
         <calculator-version>1.0</calculator-version>
         <maven-checkstyle-plugin-version>3.1.1</maven-checkstyle-plugin-version>
+        <selenium-java-version>3.141.59</selenium-java-version>
+        <selenium-chrome-driver-version>3.141.59</selenium-chrome-driver-version>
+        <webdrivermanager-version>4.2.2</webdrivermanager-version>
+
     </properties>
 
     <dependencies>
@@ -31,6 +35,24 @@
             <version>${calculator-version}</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/calculator-1.0.jar</systemPath>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium-java-version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chrome-driver</artifactId>
+            <version>${selenium-chrome-driver-version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${webdrivermanager-version}</version>
         </dependency>
     </dependencies>
 
@@ -98,6 +120,20 @@
             <id>MultiplicationAndDivisionTestsSuite</id>
             <properties>
                 <suiteXmlFiles-address>src/test/resources/MultiplicationAndDivisionTestsSuite.xml
+                </suiteXmlFiles-address>
+            </properties>
+        </profile>
+        <profile>
+            <id>Hw2Ex1TestsSuite</id>
+            <properties>
+                <suiteXmlFiles-address>src/test/resources/Hw2Ex1TestsSuite.xml
+                </suiteXmlFiles-address>
+            </properties>
+        </profile>
+        <profile>
+            <id>Hw2Ex2TestsSuite</id>
+            <properties>
+                <suiteXmlFiles-address>src/test/resources/Hw2Ex2TestsSuite.xml
                 </suiteXmlFiles-address>
             </properties>
         </profile>
