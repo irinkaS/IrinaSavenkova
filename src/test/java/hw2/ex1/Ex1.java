@@ -75,13 +75,13 @@ public class Ex1 {
     @Test(priority = 6)
     public void testHeaderItemsAreShowedCorrectly() {
         assertEquals(driver.findElement(
-                By.xpath("(//ul[contains(@class, 'm-l8')]/li)[1]")).getText(), "HOME");
+                By.xpath("//a[contains(text(), 'Home')]")).getText(), "HOME");
         assertEquals(driver.findElement(
-                By.xpath("(//ul[contains(@class, 'm-l8')]/li)[2]")).getText(), "CONTACT FORM");
+                By.xpath("//a[contains(text(), 'Contact form')]")).getText(), "CONTACT FORM");
         assertEquals(driver.findElement(
-                By.xpath("(//ul[contains(@class, 'm-l8')]/li)[3]")).getText(), "SERVICE");
+                By.xpath("//a[contains(text(), 'Service')]")).getText(), "SERVICE");
         assertEquals(driver.findElement(
-                By.xpath("(//ul[contains(@class, 'm-l8')]/li)[4]")).getText(), "METALS & COLORS");
+                By.xpath("//a[contains(text(), 'Metals & Colors')]")).getText(), "METALS & COLORS");
     }
 
     // 7. Assert that there are 4 images on the Index Page and they are displayed
